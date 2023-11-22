@@ -1,0 +1,5 @@
+findByTestId() vs getByTestId() vs queryByTestId()
+
+getByRole() vs queryByRole()
+
+waitFor() vs waitFor

@@ -1,0 +1,96 @@
+Useful RTL method
+
+
+------------------------------------------------------------------------------
+
+-userEvent methods
+
+    ->these methods simulate actions in UI 
+
+    ex: 
+
+    userEvent.click(saveButton);
+    userEvent.clear(editInput);
+    userEvent.type(editInput, 'user5-updated');
+ 
+
+
+------------------------------------------------------------------------------
+
+ -expect() assertions 
+
+    ->makes assertion
+        
+ 
+    ex:
+
+    expect(header).toBe('auth header value');
+    expect(id).toBe('5');
+    expect(requestBody).toEqual({ username: 'user5-updated' });
+    expect(editButton).toBeInTheDocument();
+
+
+------------------------------------------------------------------------------
+
+ 
+
+-queryByLabelText() 
+    ->useful for accessing inputs 
+
+    ex:
+    
+    queryByLabelText('Change your username');
+
+
+-queryByText()
+    ex: 
+
+    expect(
+      screen.queryByText('Are you sure to delete your account?')
+    ).toBeInTheDocument();
+
+
+
+
+-getByRole()
+    ->useful for accessing multiple things: in our case we access
+    button, h1, span 
+
+    ex:
+    
+    const spinner = screen.getByRole('status');
+    
+    userEvent.click(screen.getByRole('button', { name: 'Cancel' }));
+
+
+
+-findByRole()
+    ->
+
+    ex:
+
+    const newUsername = await screen.findByRole('heading', {
+    name: 'new-username'
+    });
+
+    const editButton = await screen.findByRole('button', { name: 'Edit' });
+
+
+-queryByTestId()
+
+    ->useful for accessing element based on data attribute that we set 
+
+     ex: here we can assume modal has this data attribute set
+     const modal = screen.queryByTestId('modal');
+ 
+-toHaveValue()
+    ->checks value inside input
+
+    ex:
+
+    expect(input).toHaveValue('user5');
+
+
+
+
+
