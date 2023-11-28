@@ -1,4 +1,4 @@
-<h1 align="center">medium-clone</h1>
+<h1 align="center">mern-tdd</h1>
 
 ## Description
 
